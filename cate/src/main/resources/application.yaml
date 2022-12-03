@@ -1,0 +1,13 @@
+server:
+  port: 8301
+spring:
+  application:
+    name: cate-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+        namespace: CateSharing-Space
+

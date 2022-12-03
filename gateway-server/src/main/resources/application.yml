@@ -1,0 +1,35 @@
+server:
+  port: 80
+spring:
+  application:
+    name: gate-server
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true  # 开启动态路由  开启通用应用名称 找到服务的功能
+          lower-case-service-id: true  # 开启服务名称小写
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowCredentials: true  # 可以携带cookie
+            allowedHeaders: '*'
+            allowedMethods: '*'
+            allowedOrigins: '*'
+      routes:
+        - id: user-route
+          uri: lb://user-server
+          predicates: Path=/catesharing/user/**
+        - id: note-route
+          uri: lb://note-server
+          predicates: Path=/catesharing/note/**
+        - id: cate-route
+          uri: lb://cate-server
+          predicates: Path=/catesharing/cate/**
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+        namespace: CateSharing-Space
+

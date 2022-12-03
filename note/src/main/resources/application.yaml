@@ -1,0 +1,13 @@
+server:
+  port: 8303
+spring:
+  application:
+    name: note-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+        namespace: CateSharing-Space
+
