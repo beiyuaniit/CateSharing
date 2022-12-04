@@ -42,6 +42,7 @@ public class RootController {
                 Map<String,Object> map=new HashMap<>();
                 map.put("token","admin-token");
                 return Result.ok(map);
+                
             }
         }
         return Result.fail(null);
