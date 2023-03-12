@@ -1,9 +1,13 @@
 package note.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -32,5 +36,7 @@ public class Note implements Serializable {
 
     private Integer cateId;
 
+    @TableField(exist = false)
+    private Map<String ,Object>otherData=new HashMap<>();
 
 }

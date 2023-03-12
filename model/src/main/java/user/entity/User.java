@@ -24,7 +24,7 @@ public class User implements Serializable {
     @TableId(value = "user_id", type = IdType.AUTO)
     private Integer userId;
 
-    private String name;
+    private String nickname;
 
     private String password;
 
@@ -32,5 +32,10 @@ public class User implements Serializable {
 
     private String profileAddr;
 
+    private Integer level;
+
+    private String email;
+
+    private String ip;
 
 }

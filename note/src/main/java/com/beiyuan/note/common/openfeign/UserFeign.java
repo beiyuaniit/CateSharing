@@ -1,4 +1,4 @@
-package com.beiyuan.note.openfeign;
+package com.beiyuan.note.common.openfeign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

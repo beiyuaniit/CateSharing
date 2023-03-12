@@ -1,4 +1,4 @@
-package com.beiyuan.cate.openfegin;
+package com.beiyuan.cate.common.openfegin;
 
 import org.springframework.cloud.openfeign.FeignClient;
 

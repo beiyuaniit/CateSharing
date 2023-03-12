@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/catesharing/user")
 @RestController
 @Api("test")
+
 public class TestController {
 
     @GetMapping("sayhi")

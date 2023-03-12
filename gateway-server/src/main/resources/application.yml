@@ -13,9 +13,10 @@ spring:
         cors-configurations:
           '[/**]':
             allowCredentials: true  # 可以携带cookie
-            allowedHeaders: '*'
-            allowedMethods: '*'
-            allowedOrigins: '*'
+            allowedHeaders: "*"
+            allowedMethods: "*"
+            allowedOrigins: "*"
+        add-to-simple-url-handler-mapping: true #解决option请求被拦截
       routes:
         - id: user-route
           uri: lb://user-server

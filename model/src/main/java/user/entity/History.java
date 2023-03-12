@@ -3,6 +3,8 @@ package user.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -27,5 +29,5 @@ public class History implements Serializable {
 
     private Integer noteId;
 
-
+    private LocalDateTime viewTime;
 }

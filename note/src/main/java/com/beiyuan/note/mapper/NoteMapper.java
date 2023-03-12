@@ -2,6 +2,9 @@ package com.beiyuan.note.mapper;
 
 import note.entity.Note;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface NoteMapper extends BaseMapper<Note> {
 
+    List<Note> getByUserId(@Param("id") Long id);
+
+    List<Integer> getNoteIds(@Param("userId") Integer userId);
 }

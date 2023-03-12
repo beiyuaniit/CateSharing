@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.beiyuan.cate.mapper.StepMapper">
+    <select id="getByCateId" parameterType="int" resultType="cate.entity.Step">
+        select * from step where cate_id=#{id}
+    </select>
 
+    <delete id="deleteByCateId" parameterType="int">
+        delete from step where cate_id=#{id}
+    </delete>
 </mapper>

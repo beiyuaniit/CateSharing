@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.beiyuan.user.mapper.UserMapper">
+    <select id="selectUserList" resultType="user.vo.UserQueryVo">
+        select user_id,nickname,profile_addr,email,level,ip from user
+        limit #{cur},#{limit}
+    </select>
 
+    <select id="selectListCondition" resultType="user.vo.UserQueryVo">
+        select user_id,nickname,profile_addr,email,level,ip from user
+        <where>
+            <if test=" nickname!='' and nickname !=null">
+                and nickname=#{nickname},
+            </if>
+            <if test="level!=null and level!='' ">
+                and level=#{level}
+            </if>
+        </where>
+        limit #{cur},#{limit}
+    </select>
+
+    <select id="getUserByName" resultType="user.entity.User">
+        select * from user where nickname=#{name}
+    </select>
 </mapper>

@@ -1,4 +1,4 @@
-package com.beiyuan.user.common.result;
+package com.beiyuan.common.result;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -25,9 +25,16 @@ public class Result<T>{
         if(data!=null){
             result.setData(data);
         }
-        result.setCode(200);
+        result.setCode(20000);
         result.setMessage("success");
         return result;
+    }
+
+    public static<T> Result<T> bool(boolean isSuccess){
+        if(isSuccess){
+            return Result.ok(null);
+        }
+        return Result.fail(null);
     }
 
     public static<T> Result<T> fail(T data){
@@ -35,7 +42,7 @@ public class Result<T>{
         if(data!=null){
             result.setData(data);
         }
-        result.setCode(400);
+        result.setCode(40000);
         result.setMessage("fail");
         return result;
     }

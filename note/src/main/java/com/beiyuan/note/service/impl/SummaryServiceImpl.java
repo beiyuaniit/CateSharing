@@ -4,6 +4,7 @@ import note.entity.Summary;
 import com.beiyuan.note.mapper.SummaryMapper;
 import com.beiyuan.note.service.SummaryService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,4 +18,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class SummaryServiceImpl extends ServiceImpl<SummaryMapper, Summary> implements SummaryService {
 
+
+    @Autowired
+    SummaryMapper summaryMapper;
+    @Override
+    public int addSummary() {
+        Summary summary = new Summary();
+        summaryMapper.insertReturnSummaryId(summary);
+        return summary.getSummaryId();
+    }
 }

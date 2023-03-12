@@ -2,6 +2,9 @@ package com.beiyuan.user.service;
 
 import user.entity.Favorite;
 import com.baomidou.mybatisplus.extension.service.IService;
+import user.entity.History;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface FavoriteService extends IService<Favorite> {
 
+    List<Favorite> pageList(Long cur, Long limit);
 }
